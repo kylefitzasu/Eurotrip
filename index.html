@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Follow along with Kyle &amp; Sarah's trip to Spain and Munich: flights, trains, golf, weather and more.">
+<title>Kyle &amp; Sarah's Big Spain Adventure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E8F3FC; --card:#FFFFFF; --ink:#14213D; --ink2:#44526F; --edge:#14213D; --shadow:#14213D;
+  --sun:#FFC233; --sun-soft:#FFF1C7; --tomato:#F0483E; --sea:#0C9AA8; --azul:#2547D0; --azul-soft:#DCE5FF;
+  --leaf:#1F9D5F; --leaf-soft:#D6F5E5; --night:#0B1740; --chip:#FFFFFF; --focus:#2547D0;
+  --sea-bg:#BFE3F5; --land:#FFE6A0; --land2:#F1EBD6; --line:#C9D8E8;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1230; --card:#121E48; --ink:#EEF3FF; --ink2:#B4C1E6; --edge:#3F58AB; --shadow:#040922;
+    --sun-soft:#3B3010; --azul-soft:#1B2C6B; --leaf-soft:#123B2A; --chip:#16255A; --focus:#FFC233;
+    --sea-bg:#12306B; --land:#5A4B22; --land2:#2A3350; --line:#2A3D78;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1230; --card:#121E48; --ink:#EEF3FF; --ink2:#B4C1E6; --edge:#3F58AB; --shadow:#040922;
+  --sun-soft:#3B3010; --azul-soft:#1B2C6B; --leaf-soft:#123B2A; --chip:#16255A; --focus:#FFC233;
+  --sea-bg:#12306B; --land:#5A4B22; --land2:#2A3350; --line:#2A3D78;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);background:var(--night);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito Sans','Trebuchet MS',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:'Lilita One','Arial Rounded MT Bold','Trebuchet MS',system-ui,sans-serif;font-weight:400;line-height:1.1;margin:0;letter-spacing:.005em}
+h2{font-size:clamp(1.7rem,6vw,2.3rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 .7em}
+a{color:var(--azul);font-weight:800}
+:root[data-theme="dark"] a{color:#9DB4FF}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) a{color:#9DB4FF}}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:940px;margin:0 auto;padding:0 16px}
+.sec{padding:34px 0 8px}
+.sec > .lede{color:var(--ink2);max-width:60ch;margin:8px 0 18px}
+.card{background:var(--card);border:2.5px solid var(--edge);border-radius:20px;box-shadow:5px 5px 0 var(--shadow);padding:18px;position:relative}
+.small{font-size:.9rem;color:var(--ink2)}
+.btn{font:inherit;font-weight:800;border:2.5px solid var(--edge);background:var(--sun);color:#14213D;border-radius:999px;padding:8px 16px;cursor:pointer;box-shadow:3px 3px 0 var(--shadow)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
+.btn[aria-pressed="false"]{background:var(--card);color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--night);color:#fff;padding:34px 0 92px}
+.sky{position:absolute;inset:0;width:100%;height:100%}
+.hero-in{position:relative}
+.hero h1{font-size:clamp(2.4rem,9.5vw,4.4rem);text-wrap:balance;max-width:14ch;color:#fff;text-shadow:0 3px 0 rgba(6,12,40,.55)}
+.hero .sub{font-size:1.1rem;max-width:34ch;margin:14px 0 0;color:#E6EEFF;font-weight:600}
+.stats{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:20px 0 0}
+.stats li{background:rgba(9,18,52,.74);border:2px solid rgba(255,255,255,.38);border-radius:999px;padding:5px 14px;font-weight:800;font-size:.95rem}
+.stats b{color:var(--sun);font-family:'Lilita One',system-ui,sans-serif;font-weight:400;font-size:1.15rem;margin-right:4px}
+.cloud{animation:drift 46s ease-in-out infinite alternate}
+.cloud.c2{animation-duration:62s;animation-direction:alternate-reverse}
+@keyframes drift{from{transform:translateX(-26px)}to{transform:translateX(64px)}}
+
+/* nav */
+.chips{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);border-bottom:2px solid var(--line);display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:0 0 auto;text-decoration:none;color:var(--ink);background:var(--chip);border:2px solid var(--edge);border-radius:999px;padding:6px 14px;font-weight:800;font-size:.92rem;white-space:nowrap}
+
+/* tracker */
+.tracker{margin-top:-64px;z-index:5}
+.tr-top{display:flex;gap:14px;align-items:center}
+.tr-emoji{font-size:2.6rem;flex:0 0 auto;width:68px;height:68px;border-radius:50%;background:var(--sun);border:2.5px solid var(--edge);display:grid;place-items:center}
+.tracker h2{font-size:clamp(1.4rem,5vw,1.9rem)}
+.tracker p{margin:4px 0 0;color:var(--ink2)}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 4px;text-align:center}
+.cd div{background:var(--azul-soft);border:2px solid var(--edge);border-radius:14px;padding:8px 2px}
+.cd b{display:block;font-family:'Lilita One',system-ui,sans-serif;font-weight:400;font-size:1.7rem;line-height:1}
+.cd span{font-size:.8rem;font-weight:800;color:var(--ink2)}
+.cdlabel{font-weight:800;margin:14px 0 0}
+.bar{position:relative;height:16px;background:var(--azul-soft);border:2.5px solid var(--edge);border-radius:999px;margin:22px 8px 8px}
+.fill{height:100%;background:var(--sun);border-radius:999px;width:0}
+.tok{position:absolute;top:-17px;left:0;transform:translateX(-50%);font-size:1.7rem;line-height:1}
+.tr-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:14px}
+.tr-row .mini{background:var(--sun-soft);border:2px solid var(--edge);border-radius:14px;padding:8px 12px}
+.mini small{display:block;font-weight:800;color:var(--ink2);font-size:.8rem}
+.mini b{font-family:'Lilita One',system-ui,sans-serif;font-weight:400;font-size:1.35rem}
+.tm{margin-top:16px;padding-top:14px;border-top:2px dashed var(--line)}
+.tm label{font-weight:800;display:block;margin-bottom:6px}
+.tm input[type=range]{width:100%;accent-color:var(--tomato);height:28px}
+.tm .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+
+/* trail + steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.steps > li{display:grid;grid-template-columns:54px 1fr;gap:12px;position:relative}
+.steps > li::before{content:"";position:absolute;left:26px;top:56px;bottom:-16px;width:3px;background:repeating-linear-gradient(var(--edge) 0 6px,transparent 6px 12px);opacity:.4}
+.steps > li:last-child::before{display:none}
+.dot{width:54px;height:54px;border-radius:50%;background:var(--sun);border:2.5px solid var(--edge);display:grid;place-items:center;font-size:1.6rem;z-index:1}
+.steps > li.done .dot{background:var(--leaf-soft)}
+.steps > li.current .dot{box-shadow:0 0 0 5px var(--sun-soft),0 0 0 8px var(--sun)}
+.steps h3{margin-bottom:4px}
+.steps .card{padding:14px 16px}
+.here{display:none;background:var(--tomato);color:#fff;border-radius:999px;font-weight:800;font-size:.8rem;padding:2px 10px;margin-left:8px;vertical-align:middle;font-family:'Nunito Sans',sans-serif}
+.steps > li.current .here{display:inline-block}
+.tag{display:inline-block;background:var(--azul-soft);border:2px solid var(--edge);border-radius:999px;padding:1px 10px;font-weight:800;font-size:.82rem;margin:0 6px 6px 0}
+
+/* flights */
+.grid2{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.flight .fl-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.flight .fl-no{font-family:'Lilita One',system-ui,sans-serif;font-size:1.25rem}
+.fl-map{width:100%;height:auto;display:block;margin:6px 0 2px;background:linear-gradient(#DDF0FF,#F5FBFF);border:2px solid var(--edge);border-radius:14px}
+:root[data-theme="dark"] .fl-map{background:linear-gradient(#173070,#1D3A85)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fl-map{background:linear-gradient(#173070,#1D3A85)}}
+.flight.night .fl-map{background:linear-gradient(#070F33,#1B2F85)!important}
+.fl-arc{fill:none;stroke:var(--ink);stroke-opacity:.5;stroke-width:2.5;stroke-dasharray:2 9;stroke-linecap:round}
+.flight.night .fl-arc{stroke:#fff}
+.pl{fill:var(--ink)}
+.flight.night .pl{fill:#fff}
+.city-dot{fill:var(--tomato);stroke:var(--edge);stroke-width:2.5}
+.fl-codes{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:start;margin-top:8px}
+.fl-codes b{font-family:'Lilita One',system-ui,sans-serif;font-weight:400;font-size:2rem;line-height:1;display:block}
+.fl-codes span{display:block;font-weight:800;font-size:.9rem}
+.fl-codes em{display:block;font-style:normal;color:var(--ink2);font-size:.88rem}
+.fl-codes .r{text-align:right}
+.fl-mid{align-self:center;text-align:center;font-weight:800;background:var(--sun-soft);border:2px solid var(--edge);border-radius:999px;padding:4px 10px;font-size:.88rem}
+.fl-fact{margin:12px 0 10px}
+.fl-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.fl-foot .small{margin:0}
+
+/* madrid */
+.time{display:inline-block;background:var(--tomato);color:#fff;font-weight:800;border-radius:999px;padding:1px 12px;font-size:.85rem;margin-right:8px}
+.steps.madrid .dot{background:var(--azul-soft)}
+.pick{margin-top:8px;font-size:.95rem;background:var(--sun-soft);border:2px dashed var(--edge);border-radius:12px;padding:8px 12px}
+
+/* maps */
+.mapbox{background:var(--sea-bg);border:2.5px solid var(--edge);border-radius:18px;overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto}
+.land{fill:var(--land);stroke:var(--edge);stroke-width:1.6;stroke-linejoin:round}
+.land2{fill:var(--land2);stroke:var(--edge);stroke-opacity:.35;stroke-width:1}
+.border{fill:none;stroke:var(--edge);stroke-opacity:.35;stroke-width:1.2;stroke-dasharray:4 4}
+.lbl{font:800 12px 'Nunito Sans',system-ui,sans-serif;fill:var(--ink);paint-order:stroke;stroke:var(--land);stroke-width:4px;stroke-linejoin:round}
+.lbl.faint{font-weight:600;fill:var(--ink2);font-size:10.5px}
+.lbl.sea{stroke:none;fill:var(--ink2);font-style:italic;font-weight:600}
+.track{fill:none;stroke:var(--tomato);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.ties{fill:none;stroke:#fff;stroke-width:5;stroke-dasharray:2 7;stroke-linejoin:round}
+.cdot{fill:var(--sun);stroke:var(--edge);stroke-width:2.5}
+.tinfo{margin-top:14px}
+.speed{display:grid;gap:9px;margin-top:8px}
+.srow{display:grid;grid-template-columns:96px 1fr 76px;gap:10px;align-items:center;font-weight:800;font-size:.92rem}
+.strack{height:18px;background:var(--azul-soft);border:2px solid var(--edge);border-radius:999px;overflow:hidden}
+.sfill{height:100%;width:0;background:var(--sea);transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.srow.ave .sfill{background:var(--tomato)}
+.srow span:last-child{text-align:right}
+
+/* hotel + golf */
+.split{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.facts{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px}
+.facts li{padding-left:28px;position:relative}
+.facts li::before{content:attr(data-e);position:absolute;left:0}
+.course{padding:0;overflow:hidden}
+.course .band{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:2.5px solid var(--edge);color:#fff}
+.course .band span{font-size:2rem;line-height:1}
+.course .band h3{color:#fff;font-size:1.25rem}
+.course .body{padding:14px 16px 16px}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:.93rem;margin:0 0 10px}
+.spec dt{font-weight:800;color:var(--ink2)}
+.spec dd{margin:0}
+.golfwords{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:10px}
+.gw{background:var(--leaf-soft);border:2px solid var(--edge);border-radius:14px;padding:8px 12px;font-size:.95rem}
+.gw b{font-family:'Lilita One',system-ui,sans-serif;font-weight:400;font-size:1.1rem;display:block}
+
+/* money */
+.money{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.conv{display:grid;gap:10px}
+.conv label{font-weight:800;display:block;font-size:.9rem}
+.conv input{width:100%;font:inherit;font-weight:800;font-size:1.4rem;padding:8px 12px;border:2.5px solid var(--edge);border-radius:14px;background:var(--card);color:var(--ink)}
+.rate{font-family:'Lilita One',system-ui,sans-serif;font-size:1.6rem}
+table.tbl{width:100%;border-collapse:collapse}
+.tbl td,.tbl th{padding:6px 8px;border-bottom:2px dashed var(--line);text-align:left}
+.tbl th{font-size:.85rem;color:var(--ink2)}
+.tbl td:last-child,.tbl th:last-child{text-align:right;font-weight:800}
+
+/* weather */
+.wx{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
+.wx .card{overflow:hidden}
+.wx .em{font-size:2.6rem;line-height:1;display:inline-block}
+.wx .temps{font-family:'Lilita One',system-ui,sans-serif;font-size:2rem;margin:6px 0 2px}
+.wx .temps small{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:.9rem;color:var(--ink2)}
+.range{position:relative;height:14px;border-radius:999px;background:var(--azul-soft);border:2px solid var(--edge);margin:10px 0}
+.range i{position:absolute;top:0;bottom:0;border-radius:999px;background:linear-gradient(90deg,var(--sea),var(--sun),var(--tomato))}
+
+/* fun */
+.fun{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.word{font-family:'Lilita One',system-ui,sans-serif;font-size:2rem;line-height:1.1}
+.say{font-weight:800;color:var(--tomato)}
+.bingo{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.bingo button{font:inherit;font-weight:800;font-size:.9rem;border:2.5px solid var(--edge);border-radius:14px;background:var(--card);color:var(--ink);padding:10px 4px;cursor:pointer;min-height:84px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.bingo button span{font-size:1.7rem;line-height:1}
+.bingo button[aria-pressed="true"]{background:var(--sun);color:#14213D;box-shadow:inset 0 0 0 3px var(--card)}
+.factbox{min-height:5.5em}
+
+footer{margin-top:44px;background:var(--night);color:#DCE6FF;padding:26px 0 30px;font-size:.92rem}
+footer a{color:var(--sun)}
+
+@media (max-width:520px){
+  body{font-size:16.5px}
+  .cd b{font-size:1.4rem}
+  .srow{grid-template-columns:78px 1fr 64px}
+}
+@media (prefers-reduced-motion: reduce){
+  .cloud{animation:none}
+  html{scroll-behavior:auto}
+  .sfill{transition:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="planeShape" d="M-15 0 L-8 -3.2 L-3 -13 L1.5 -13 L-1 -3.4 L9 -2.6 L15 0 L9 2.6 L-1 3.4 L1.5 13 L-3 13 L-8 3.2 Z"/>
+    <g id="trainShape">
+      <rect x="-17" y="-6.5" width="31" height="13" rx="5.5" fill="#F0483E" stroke="#14213D" stroke-width="1.6"/>
+      <path d="M14 -6.5 L22 0 L14 6.5 Z" fill="#FFC233" stroke="#14213D" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="-9" cy="0" r="2.2" fill="#fff"/><circle cx="-1.5" cy="0" r="2.2" fill="#fff"/><circle cx="6" cy="0" r="2.2" fill="#fff"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="hero" id="top">
+  <svg class="sky" viewBox="0 0 900 340" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0B1740"/>
+        <stop offset=".62" stop-color="#2547D0"/>
+        <stop offset="1" stop-color="#FF9F43"/>
+      </linearGradient>
+    </defs>
+    <rect width="900" height="340" fill="url(#skyGrad)"/>
+    <g fill="#fff" opacity=".85">
+      <circle cx="60" cy="40" r="1.6"/><circle cx="170" cy="110" r="1.2"/><circle cx="260" cy="30" r="1.8"/><circle cx="380" cy="80" r="1.3"/>
+      <circle cx="470" cy="24" r="1.6"/><circle cx="590" cy="96" r="1.2"/><circle cx="690" cy="36" r="1.7"/><circle cx="820" cy="70" r="1.4"/><circle cx="870" cy="150" r="1.2"/>
+    </g>
+    <circle cx="770" cy="338" r="78" fill="#FFC233"/>
+    <circle cx="770" cy="338" r="104" fill="#FFC233" opacity=".25"/>
+    <g class="cloud c1" fill="#fff" opacity=".92"><ellipse cx="150" cy="248" rx="46" ry="13"/><ellipse cx="182" cy="236" rx="30" ry="15"/><ellipse cx="122" cy="238" rx="24" ry="12"/></g>
+    <g class="cloud c2" fill="#fff" opacity=".8"><ellipse cx="560" cy="290" rx="52" ry="12"/><ellipse cx="590" cy="279" rx="28" ry="14"/><ellipse cx="532" cy="281" rx="22" ry="11"/></g>
+    <path id="heroArc" d="M-30 300 Q430 -80 930 250" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" stroke-dasharray="2 10" stroke-linecap="round"/>
+    <g id="heroPlane" fill="#fff" style="opacity:0">
+      <use href="#planeShape" transform="scale(1.7)"/>
+      <animateMotion id="heroAnim" dur="6s" begin="indefinite" fill="freeze" rotate="auto" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .5 1"><mpath href="#heroArc"/></animateMotion>
+    </g>
+  </svg>
+  <div class="wrap hero-in">
+    <h1>Kyle &amp; Sarah's Big Spain Adventure</h1>
+    <p class="sub">Sept 25 to Oct 4, 2026. Denver, Madrid, the Costa del Sol, Munich, and home again.</p>
+    <ul class="stats">
+      <li><b>4</b>flights</li>
+      <li><b>2</b>high-speed trains</li>
+      <li><b>4</b>golf courses</li>
+      <li><b>12,000+</b>miles</li>
+    </ul>
+  </div>
+</header>
+
+<nav class="chips" aria-label="Sections">
+  <a href="#live">Where are they?</a>
+  <a href="#trail">Day by day</a>
+  <a href="#flights">Flights</a>
+  <a href="#madrid">Madrid night</a>
+  <a href="#trains">Trains</a>
+  <a href="#stay">Hotel</a>
+  <a href="#golf">Golf</a>
+  <a href="#money">Money</a>
+  <a href="#weather">Weather</a>
+  <a href="#fun">Just for fun</a>
+</nav>
+
+<main class="wrap">
+
+  <section id="live" class="card tracker" aria-labelledby="trTitle">
+    <div class="tr-top">
+      <div class="tr-emoji" id="trEmoji" aria-hidden="true">🏡</div>
+      <div aria-live="polite">
+        <h2 id="trTitle">Getting ready at home</h2>
+        <p id="trSub">Bags are packed. Next stop: takeoff from Denver.</p>
+      </div>
+    </div>
+    <p class="cdlabel" id="cdLabel">Countdown to takeoff</p>
+    <div class="cd" id="cd">
+      <div><b id="cdD">0</b><span>days</span></div>
+      <div><b id="cdH">0</b><span>hours</span></div>
+      <div><b id="cdM">0</b><span>minutes</span></div>
+      <div><b id="cdS">0</b><span>seconds</span></div>
+    </div>
+    <div class="bar" id="trBar" hidden><div class="fill" id="trFill"></div><span class="tok" id="trTok" aria-hidden="true">✈️</span></div>
+    <div class="tr-row">
+      <div class="mini"><small>Home clock (Denver)</small><b id="clkHome">--</b></div>
+      <div class="mini"><small>Spain and Germany clock</small><b id="clkEu">--</b></div>
+      <div class="mini"><small>Miles traveled so far</small><b id="miles">0</b></div>
+    </div>
+    <div class="tm">
+      <label for="tm">Time machine: drag to peek at where they'll be</label>
+      <input type="range" id="tm" min="0" max="1000" value="0" aria-describedby="tmNote">
+      <div class="row">
+        <span class="small" id="tmNote">Showing real time right now.</span>
+        <button class="btn" id="tmLive" type="button">Back to now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="trail" class="sec">
+    <h2>The trip, day by day</h2>
+    <p class="lede">The gold ring shows where Kyle and Sarah are right now. Trains and rides are planned, so exact times may shift a little.</p>
+    <ol class="steps" id="trailList">
+      <li data-start="2026-09-25T18:09:00Z">
+        <span class="dot" aria-hidden="true">🛫</span>
+        <div class="card"><h3>Fri, Sep 25: Up, up and away<span class="here">They're here</span></h3>
+          <p>Denver to Washington DC, then an overnight flight across the Atlantic to Madrid.</p>
+          <a href="#flights">See the flights</a></div>
+      </li>
+      <li data-start="2026-09-26T06:05:00Z">
+        <span class="dot" aria-hidden="true">🌆</span>
+        <div class="card"><h3>Sat, Sep 26: Welcome to Madrid<span class="here">They're here</span></h3>
+          <p>They land at 8:05 AM. Then it's an evening of parks, plazas, tapas and churros.</p>
+          <a href="#madrid">See the Madrid night</a></div>
+      </li>
+      <li data-start="2026-09-27T08:00:00Z">
+        <span class="dot" aria-hidden="true">🚄</span>
+        <div class="card"><h3>Sun, Sep 27: Train to the coast<span class="here">They're here</span></h3>
+          <p>A Renfe high-speed AVE train from Madrid to Málaga, then a ride along the sea to Marbella.</p>
+          <a href="#trains">See the trains</a></div>
+      </li>
+      <li data-start="2026-09-27T11:45:00Z">
+        <span class="dot" aria-hidden="true">⛳</span>
+        <div class="card"><h3>Sep 27 to Oct 2: Golf week<span class="here">They're here</span></h3>
+          <p>The Killarney Cup: Team Ireland vs Team USA on four Costa del Sol courses. Home base is a hotel in Marbella's Old Town.</p>
+          <a href="#golf">See the courses</a></div>
+      </li>
+      <li data-start="2026-10-02T05:00:00Z">
+        <span class="dot" aria-hidden="true">🌄</span>
+        <div class="card"><h3>Fri, Oct 2: Early train, then Munich<span class="here">They're here</span></h3>
+          <p>An early start to catch the AVE back to Madrid, then a 2:55 PM flight to Munich.</p></div>
+      </li>
+      <li data-start="2026-10-02T15:30:00Z">
+        <span class="dot" aria-hidden="true">🥨</span>
+        <div class="card"><h3>Oct 2 to 4: Munich<span class="here">They're here</span></h3>
+          <p>A weekend in Bavaria. Fun fact: Oktoberfest, the world's biggest fair, runs through Oct 4.</p></div>
+      </li>
+      <li data-start="2026-10-04T09:50:00Z">
+        <span class="dot" aria-hidden="true">🏠</span>
+        <div class="card"><h3>Sun, Oct 4: Homeward bound<span class="here">They're here</span></h3>
+          <p>Munich at 11:50 AM, Denver at 2:20 PM. That's a 10½-hour flight that seems to take only 2½ hours on the clock.</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="flights" class="sec">
+    <h2>Flights</h2>
+    <p class="lede">Watch each plane fly its route when you scroll to it. On screen, 1 second is 1 hour of real flying. Tap Replay to watch again.</p>
+    <div class="grid2" id="flightList"></div>
+  </section>
+
+  <section id="madrid" class="sec">
+    <h2>One night in Madrid</h2>
+    <p class="lede">Saturday, Sep 26. They land at 8:05 AM after the overnight flight, so this plan starts late afternoon, once they've had a chance to freshen up. Madrid eats dinner very late, so a snack comes first.</p>
+    <ol class="steps madrid">
+      <li>
+        <span class="dot" aria-hidden="true">🚣</span>
+        <div class="card"><h3><span class="time">4:30 PM</span>Retiro Park</h3>
+          <p>Madrid's giant park has a big pond where you can rent a rowboat, and a glass palace (the Palacio de Cristal) that shines in the afternoon sun.</p>
+          <div class="pick">Kid challenge: count how many rowboats are on the water.</div></div>
+      </li>
+      <li>
+        <span class="dot" aria-hidden="true">🐻</span>
+        <div class="card"><h3><span class="time">6:00 PM</span>Puerta del Sol and Plaza Mayor</h3>
+          <p>Find the bear reaching up to a strawberry tree, Madrid's symbol, and the plaque marking Kilometer Zero, the spot all of Spain's roads are measured from. Plaza Mayor is a huge square with painted buildings all around.</p></div>
+      </li>
+      <li>
+        <span class="dot" aria-hidden="true">🌇</span>
+        <div class="card"><h3><span class="time">7:30 PM</span>Sunset at the Temple of Debod</h3>
+          <p>Yes, a real ancient Egyptian temple, more than 2,000 years old, moved to Madrid. Sunset is around 8:05 PM, and the palace and park nearby glow gold.</p></div>
+      </li>
+      <li>
+        <span class="dot" aria-hidden="true">🍽️</span>
+        <div class="card"><h3><span class="time">9:30 PM</span>Late Spanish dinner</h3>
+          <p>Spanish families often eat at 9 or 10 PM. Two good ideas:</p>
+          <div class="pick"><b>Option A, the classic:</b> Sobrino de Botín, listed by Guinness as the world's oldest restaurant (since 1725), famous for roast suckling pig. Reserve ahead.<br><b>Option B, the snack crawl:</b> tapas at the Mercado de San Miguel, sampling little plates from stall to stall.</div></div>
+      </li>
+      <li>
+        <span class="dot" aria-hidden="true">🍫</span>
+        <div class="card"><h3><span class="time">11:00 PM</span>Churros con chocolate</h3>
+          <p>Chocolatería San Ginés has been serving hot chocolate thick enough to dunk churros into since 1894. It's a Madrid night-out tradition.</p></div>
+      </li>
+      <li>
+        <span class="dot" aria-hidden="true">⚽</span>
+        <div class="card"><h3><span class="time">If there's energy</span>Peek at the Bernabéu</h3>
+          <p>Real Madrid's stadium is lit up at night and only a short metro ride from downtown. It's a great photo stop for any soccer fan.</p></div>
+      </li>
+      <li>
+        <span class="dot" aria-hidden="true">😴</span>
+        <div class="card"><h3><span class="time">Midnight</span>Lights out</h3>
+          <p>Bed before midnight, because the high-speed train to the coast leaves in the morning.</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="trains" class="sec">
+    <h2>Renfe high-speed trains</h2>
+    <p class="lede">Spain's AVE trains are like airplanes on rails. Pick a trip to watch the train zoom along its route. On screen, 5 seconds is about 2½ real hours.</p>
+    <div class="seg" role="group" aria-label="Pick a train trip">
+      <button class="btn" id="btnS" aria-pressed="true" type="button">Sun, Sep 27: Madrid to Málaga</button>
+      <button class="btn" id="btnN" aria-pressed="false" type="button">Fri, Oct 2: Málaga to Madrid</button>
+    </div>
+    <div class="mapbox" id="spainMap"></div>
+    <div class="card tinfo" id="trainInfo"></div>
+    <div class="card tinfo">
+      <h3>How fast is an AVE?</h3>
+      <div class="speed" id="speed">
+        <div class="srow"><span>Bicycle</span><div class="strack"><div class="sfill" data-w="3"></div></div><span>12 mph</span></div>
+        <div class="srow"><span>Highway car</span><div class="strack"><div class="sfill" data-w="13"></div></div><span>70 mph</span></div>
+        <div class="srow"><span>Cheetah</span><div class="strack"><div class="sfill" data-w="13"></div></div><span>70 mph</span></div>
+        <div class="srow ave"><span>AVE train</span><div class="strack"><div class="sfill" data-w="35"></div></div><span>190 mph</span></div>
+        <div class="srow"><span>Jet airliner</span><div class="strack"><div class="sfill" data-w="100"></div></div><span>550 mph</span></div>
+      </div>
+      <p class="small" style="margin-top:12px">The AVE tops out around 300 km/h, which is about 190 mph. Madrid's Atocha station even has a tropical garden inside, with a pond full of turtles.</p>
+    </div>
+  </section>
+
+  <section id="stay" class="sec">
+    <h2>The hotel</h2>
+    <div class="split">
+      <div class="card">
+        <h3>Óbal Hotel, Marbella</h3>
+        <p class="small" style="margin-top:4px">Sun, Sep 27 to Fri, Oct 2 (5 nights)</p>
+        <p>A modern hotel in the middle of Marbella's charming Old Town, about 200 meters from the beach and seaside promenade.</p>
+        <ul class="facts">
+          <li data-e="📍">Avenida Ramón y Cajal 3, Marbella</li>
+          <li data-e="🌇">Rooftop bar (the 360 Blue Sky Bar) with views over town</li>
+          <li data-e="🍳">Alameda restaurant looking out on Alameda Park</li>
+          <li data-e="💪">Gym and a wellness room</li>
+          <li data-e="🍊">Steps from Plaza de los Naranjos, the Orange Square</li>
+          <li data-e="✈️">Málaga airport is about 40 minutes away by car</li>
+        </ul>
+        <p style="margin-top:12px"><a href="https://www.obalhotelmarbella.com/en/" target="_blank" rel="noopener">Hotel website</a> &nbsp; <a href="https://www.google.com/maps/search/?api=1&query=Obal+Hotel+Marbella" target="_blank" rel="noopener">Open in Maps</a></p>
+      </div>
+      <div class="card">
+        <h3>Why Marbella?</h3>
+        <p>It's home base for the Killarney Cup, a yearly golf match between Team Ireland and Team USA that has been played since 2018. Four rounds, two teams, one Cup.</p>
+        <p>Marbella sits on the Costa del Sol ("Sun Coast") in southern Spain, right along the Mediterranean Sea. The whitewashed Old Town has narrow streets, flower pots and lots of little plazas.</p>
+        <p><a href="https://killarneycup.app" target="_blank" rel="noopener">The Killarney Cup website</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="golf" class="sec">
+    <h2>The four golf courses</h2>
+    <p class="lede">Each round is on a different course. Which day is which course will be announced during the week, so check back!</p>
+    <div class="mapbox" id="costaMap" style="margin-bottom:18px"></div>
+    <div class="split" id="courseList"></div>
+    <div class="card" style="margin-top:18px">
+      <h3>Golf words for the sofa scorekeeper</h3>
+      <div class="golfwords">
+        <div class="gw"><b>Par</b>The number of shots a hole is supposed to take.</div>
+        <div class="gw"><b>Birdie</b>One shot under par. A great hole!</div>
+        <div class="gw"><b>Eagle</b>Two shots under par. Very rare.</div>
+        <div class="gw"><b>Bogey</b>One shot over par. Happens to everybody.</div>
+        <div class="gw"><b>Hole in one</b>Sinking the ball off the tee. Legendary.</div>
+        <div class="gw"><b>Fore!</b>What golfers yell when a ball might hit someone. Duck!</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="money" class="sec">
+    <h2>Money in Europe</h2>
+    <p class="lede">Spain and Germany both use the euro (€). Use the converter to see what things cost in dollars.</p>
+    <div class="money">
+      <div class="card conv">
+        <div class="rate">€1 = $<span id="rateNum">1.149</span></div>
+        <div class="small">Mid-market rate on Sept 20, 2026. Rates change daily, and cards and cash machines add fees, so real prices run a little higher.</div>
+        <div><label for="eur">Euros (€)</label><input id="eur" inputmode="decimal" value="10"></div>
+        <div><label for="usd">Dollars ($)</label><input id="usd" inputmode="decimal" value=""></div>
+      </div>
+      <div class="card">
+        <h3>Quick guide</h3>
+        <table class="tbl" id="rateTbl">
+          <thead><tr><th>Euros</th><th>Dollars</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="weather" class="sec">
+    <h2>Weather along the way</h2>
+    <p class="lede">These are typical temperatures for each place at this time of year. The real forecast shifts as the trip gets closer, so treat it as a good guess.</p>
+    <div class="seg" role="group" aria-label="Temperature units">
+      <button class="btn" id="uF" aria-pressed="true" type="button">°F</button>
+      <button class="btn" id="uC" aria-pressed="false" type="button">°C</button>
+    </div>
+    <div class="wx" id="wxList"></div>
+    <p class="small" style="margin-top:12px">Want the live forecast? Try <a href="https://www.timeanddate.com/weather/spain/marbella/ext" target="_blank" rel="noopener">Marbella</a>, <a href="https://www.timeanddate.com/weather/spain/madrid/ext" target="_blank" rel="noopener">Madrid</a> or <a href="https://www.timeanddate.com/weather/germany/munich/ext" target="_blank" rel="noopener">Munich</a>.</p>
+  </section>
+
+  <section id="fun" class="sec">
+    <h2>Just for fun</h2>
+    <div class="fun">
+      <div class="card">
+        <h3>Word of the day</h3>
+        <div class="seg" style="margin:10px 0" role="group" aria-label="Pick a language">
+          <button class="btn" id="langEs" aria-pressed="true" type="button">Spanish</button>
+          <button class="btn" id="langDe" aria-pressed="false" type="button">German</button>
+        </div>
+        <div class="word" id="wWord">Hola</div>
+        <div class="say" id="wSay">OH-lah</div>
+        <p id="wMean">Hello</p>
+        <button class="btn" id="wNext" type="button">Next word</button>
+      </div>
+      <div class="card">
+        <h3>Did you know?</h3>
+        <p class="factbox" id="factText"></p>
+        <button class="btn" id="factNext" type="button">Another fact</button>
+      </div>
+      <div class="card" style="grid-column:1/-1">
+        <h3>Trip bingo</h3>
+        <p class="small" style="margin-top:4px">When Mom or Dad sends a photo of something on the list, tap its square to mark it. Get a whole row and shout BINGO!</p>
+        <div class="bingo" id="bingo"></div>
+        <p class="small" style="margin-top:10px"><button class="btn" id="bingoReset" type="button">Clear the board</button> <span id="bingoMsg" role="status"></span></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Kyle &amp; Sarah's Big Spain Adventure.</b> Times are local to each city. Flight times are confirmed; train and ride times are plans and may change. The tracker follows the plan, not a GPS.</p>
+    <p>Sources: Killarney Cup website, the hotel and course websites, Renfe and rail sites, munich.de. Exchange rate as of Sept 20, 2026. Last updated Sept 20, 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function safeGet(k){try{return window.localStorage.getItem(k);}catch(e){return null;}}
+function safeSet(k,v){try{window.localStorage.setItem(k,v);}catch(e){}}
+
+/* ---------- motion helpers ---------- */
+function playMotion(g,anim){
+  if(!g||!anim) return;
+  g.style.opacity=1;
+  if(RM) anim.setAttribute('dur','0.01s');
+  try{anim.beginElement();}catch(e){}
+}
+function onView(el,fn,th){
+  if(!('IntersectionObserver' in window)){fn();return;}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ fn(); io.unobserve(el);} });
+  },{threshold:th||0.35});
+  io.observe(el);
+}
+
+/* hero plane plays once on load */
+(function(){
+  var g=$('#heroPlane'), a=$('#heroAnim');
+  setTimeout(function(){playMotion(g,a);},500);
+})();
+
+/* ---------- live tracker ---------- */
+function P(id,s,e,o){o.id=id;o.s=Date.parse(s);o.e=Date.parse(e);return o;}
+var PH=[
+ P('pre','1970-01-01T00:00:00Z','2026-09-25T18:09:00Z',{em:'🏡',t:'Getting ready at home',sub:'Bags are packed. Next stop: takeoff from Denver.',next:'Takeoff from Denver',type:'home'}),
+ P('f1','2026-09-25T18:09:00Z','2026-09-25T21:35:00Z',{em:'✈️',t:'In the air: Denver to Washington DC',sub:'United 2853, about 3½ hours.',next:'Landing at Dulles',type:'air',mi:1452}),
+ P('c1','2026-09-25T21:35:00Z','2026-09-25T22:15:00Z',{em:'🏃',t:'Racing to the next gate',sub:'Just 40 minutes to catch the flight to Madrid!',next:'The overnight flight leaves',type:'stay'}),
+ P('f2','2026-09-25T22:15:00Z','2026-09-26T06:05:00Z',{em:'🌙',t:'Overnight flight to Madrid',sub:'United 260, almost 8 hours over the Atlantic Ocean.',next:'Landing in Madrid',type:'air',mi:3807}),
+ P('m1','2026-09-26T06:05:00Z','2026-09-27T08:00:00Z',{em:'🏙️',t:'Exploring Madrid',sub:'They landed! An evening of tapas, churros and city lights is planned.',next:'Morning train to the coast (planned)',type:'stay'}),
+ P('t1','2026-09-27T08:00:00Z','2026-09-27T10:30:00Z',{em:'🚄',t:'On the high-speed train to Málaga',sub:'A planned mid-morning AVE, about 2½ hours.',next:'Arriving in Málaga',type:'train',mi:315}),
+ P('c2','2026-09-27T10:30:00Z','2026-09-27T11:45:00Z',{em:'🚕',t:'Riding the coast road to Marbella',sub:'Almost at the hotel!',next:'Hotel check-in',type:'car'}),
+ P('g','2026-09-27T11:45:00Z','2026-10-02T05:00:00Z',{em:'⛳',t:'Golf week in Marbella',sub:'The Killarney Cup: four rounds, two teams, one Cup.',next:'Early ride to the train (planned)',type:'stay'}),
+ P('c3','2026-10-02T05:00:00Z','2026-10-02T06:30:00Z',{em:'🌄',t:'Early start to Málaga',sub:'Heading to the station for the train back to Madrid.',next:'Train leaves (planned)',type:'car'}),
+ P('t2','2026-10-02T06:30:00Z','2026-10-02T09:00:00Z',{em:'🚄',t:'High-speed train to Madrid',sub:'A planned early AVE, about 2½ hours.',next:'Arriving in Madrid',type:'train',mi:315}),
+ P('a2','2026-10-02T09:00:00Z','2026-10-02T12:55:00Z',{em:'🧳',t:'Madrid airport time',sub:'Checking bags for the flight to Munich.',next:'The flight to Munich leaves',type:'stay'}),
+ P('f3','2026-10-02T12:55:00Z','2026-10-02T15:30:00Z',{em:'✈️',t:'In the air: Madrid to Munich',sub:'Flight VL 1803, about 2½ hours.',next:'Landing in Munich',type:'air',mi:940}),
+ P('mu','2026-10-02T15:30:00Z','2026-10-04T09:50:00Z',{em:'🥨',t:'Exploring Munich',sub:'Oktoberfest is in its final days.',next:'The flight home leaves',type:'stay'}),
+ P('f4','2026-10-04T09:50:00Z','2026-10-04T20:20:00Z',{em:'🛬',t:'Flying home: Munich to Denver',sub:'United 9459, the longest flight of the trip.',next:'Landing in Denver',type:'air',mi:5206}),
+ P('end','2026-10-04T20:20:00Z','2100-01-01T00:00:00Z',{em:'🏠',t:'Home sweet home!',sub:'Welcome back, world travelers.',next:'',type:'home'})
+];
+var TM_START=Date.parse('2026-09-25T16:00:00Z'), TM_END=Date.parse('2026-10-04T22:00:00Z');
+var sim=null;
+var fmtHome,fmtEu;
+try{
+  fmtHome=new Intl.DateTimeFormat('en-US',{timeZone:'America/Denver',weekday:'short',hour:'numeric',minute:'2-digit'});
+  fmtEu=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Madrid',weekday:'short',hour:'numeric',minute:'2-digit'});
+}catch(e){fmtHome=fmtEu={format:function(d){return d.toUTCString().slice(17,22);}};}
+function pad(n){return n<10?'0'+n:''+n;}
+
+function updateTracker(){
+  var now=(sim===null)?Date.now():sim;
+  var ph=PH[PH.length-1];
+  for(var i=0;i<PH.length;i++){ if(now>=PH[i].s && now<PH[i].e){ph=PH[i];break;} }
+  $('#trEmoji').textContent=ph.em;
+  $('#trTitle').textContent=ph.t;
+  $('#trSub').textContent=ph.sub;
+  var cdBox=$('#cd'), cdLabel=$('#cdLabel');
+  if(ph.id==='end'){cdBox.hidden=true;cdLabel.textContent='Trip complete. Welcome home!';}
+  else{
+    cdBox.hidden=false;
+    var diff=Math.max(0,ph.e-now), s=Math.floor(diff/1000);
+    var d=Math.floor(s/86400); s-=d*86400;
+    var h=Math.floor(s/3600); s-=h*3600;
+    var m=Math.floor(s/60); s-=m*60;
+    $('#cdD').textContent=d;$('#cdH').textContent=h;$('#cdM').textContent=m;$('#cdS').textContent=s;
+    cdLabel.textContent=(ph.id==='pre'?'Countdown to takeoff':'Next: '+ph.next);
+  }
+  var bar=$('#trBar');
+  if(ph.type==='air'||ph.type==='train'||ph.type==='car'){
+    var pct=Math.min(100,Math.max(0,(now-ph.s)/(ph.e-ph.s)*100));
+    bar.hidden=false;
+    $('#trFill').style.width=pct+'%';
+    $('#trTok').style.left=pct+'%';
+    $('#trTok').textContent=ph.type==='air'?'✈️':(ph.type==='train'?'🚄':'🚕');
+  }else{bar.hidden=true;}
+  var dnow=new Date(now);
+  $('#clkHome').textContent=fmtHome.format(dnow);
+  $('#clkEu').textContent=fmtEu.format(dnow);
+  var mi=0;
+  PH.forEach(function(p){ if(p.mi){ if(now>=p.e) mi+=p.mi; else if(now>p.s) mi+=p.mi*(now-p.s)/(p.e-p.s); } });
+  $('#miles').textContent=Math.round(mi).toLocaleString('en-US');
+  /* trail states */
+  var items=$$('#trailList > li'), cur=-1;
+  items.forEach(function(li,i){ if(now>=Date.parse(li.getAttribute('data-start'))) cur=i; });
+  var over=(now>=PH[PH.length-1].s);
+  items.forEach(function(li,i){
+    li.classList.toggle('current',i===cur && !over);
+    li.classList.toggle('done',i<cur || (over && i<=cur));
+  });
+}
+var tm=$('#tm'), tmNote=$('#tmNote');
+tm.addEventListener('input',function(){
+  sim=TM_START+(TM_END-TM_START)*(tm.value/1000);
+  tmNote.textContent='Time machine on: a peek at the plan, not the real moment.';
+  updateTracker();
+});
+$('#tmLive').addEventListener('click',function(){
+  sim=null;tm.value=0;tmNote.textContent='Showing real time right now.';updateTracker();
+});
+updateTracker();
+setInterval(updateTracker,1000);
+
+/* ---------- flights ---------- */
+var FLIGHTS=[
+ {id:'f1',no:'United 2853',day:'Fri, Sep 25',from:'DEN',fc:'Denver',to:'IAD',tc:'Washington Dulles',dep:'Leaves 12:09 PM',arr:'Lands 5:35 PM',dur:'3h 26m',mins:206,miles:1452,plane:'Boeing 737-900',fact:'Denver is the Mile High City. Its official height is exactly one mile above sea level, or 5,280 feet.',night:false},
+ {id:'f2',no:'United 260',day:'Fri night, Sep 25',from:'IAD',fc:'Washington Dulles',to:'MAD',tc:'Madrid',dep:'Leaves 6:15 PM',arr:'Lands Sat, 8:05 AM',dur:'7h 50m',mins:470,miles:3807,plane:'Boeing 767-400ER',fact:'An overnight flight! Madrid is 8 hours ahead of Denver, so a night of flying turns into a Saturday morning landing.',night:true},
+ {id:'f3',no:'Flight VL 1803',day:'Fri, Oct 2',from:'MAD',fc:'Madrid',to:'MUC',tc:'Munich',dep:'Leaves 2:55 PM',arr:'Lands this evening',dur:'about 2½h',mins:150,miles:940,plane:'Economy Comfort seats',fact:'A short hop from Spain to Germany, flying over France with a chance of spotting the Alps near the end.',night:false},
+ {id:'f4',no:'United 9459',day:'Sun, Oct 4',from:'MUC',fc:'Munich',to:'DEN',tc:'Denver',dep:'Leaves 11:50 AM',arr:'Lands 2:20 PM',dur:'10h 30m',mins:630,miles:5206,plane:'Airbus A350-900, flown by Lufthansa',fact:'A time-travel trick! The flight takes 10½ hours, but Denver is 8 hours behind, so the clocks say it only took 2½.',night:false}
+];
+var fl=$('#flightList');
+FLIGHTS.forEach(function(f){
+  var secs=Math.max(2.6,f.mins/60).toFixed(1);
+  var art=document.createElement('article');
+  art.className='card flight'+(f.night?' night':'');
+  var deco=f.night
+    ? '<circle cx="286" cy="28" r="12" fill="#FFF1C7"/><circle cx="291" cy="24" r="11" fill="#0B1740"/><g fill="#fff"><circle cx="60" cy="24" r="1.6"/><circle cx="120" cy="14" r="1.3"/><circle cx="200" cy="30" r="1.6"/><circle cx="240" cy="12" r="1.2"/><circle cx="30" cy="60" r="1.2"/></g>'
+    : '<circle cx="286" cy="26" r="12" fill="#FFC233"/><g fill="#fff" opacity=".9"><ellipse cx="70" cy="34" rx="22" ry="7"/><ellipse cx="86" cy="28" rx="13" ry="8"/><ellipse cx="230" cy="70" rx="24" ry="7"/><ellipse cx="248" cy="63" rx="13" ry="8"/></g>';
+  art.innerHTML=
+   '<div class="fl-head"><span class="fl-no">'+f.no+'</span><span class="small">'+f.day+'</span></div>'+
+   '<svg class="fl-map" viewBox="0 0 320 130" role="img" aria-label="Animated plane flying from '+f.fc+' to '+f.tc+'">'+deco+
+     '<path id="arc_'+f.id+'" class="fl-arc" d="M30 108 Q160 -16 290 108"/>'+
+     '<circle class="city-dot" cx="30" cy="108" r="7"/><circle class="city-dot" cx="290" cy="108" r="7"/>'+
+     '<g class="pl" style="opacity:0"><use href="#planeShape" transform="scale(1.05)"/>'+
+       '<animateMotion class="am" dur="'+secs+'s" begin="indefinite" fill="freeze" rotate="auto" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .55 1"><mpath href="#arc_'+f.id+'"/></animateMotion></g>'+
+   '</svg>'+
+   '<div class="fl-codes"><div><b>'+f.from+'</b><span>'+f.fc+'</span><em>'+f.dep+'</em></div><div class="fl-mid">'+f.dur+'</div><div class="r"><b>'+f.to+'</b><span>'+f.tc+'</span><em>'+f.arr+'</em></div></div>'+
+   '<p class="fl-fact">'+f.fact+'</p>'+
+   '<div class="fl-foot"><p class="small">'+f.plane+', about '+f.miles.toLocaleString('en-US')+' miles</p><button class="btn" type="button">Replay ▶</button></div>';
+  fl.appendChild(art);
+  var g=$('.pl',art), am=$('.am',art);
+  function go(){playMotion(g,am);}
+  $('.btn',art).addEventListener('click',go);
+  onView($('.fl-map',art),go);
+});
+
+/* ---------- map helpers ---------- */
+function proj(L0,L1,A0,A1,latMid,S){
+  var k=Math.cos(latMid*Math.PI/180);
+  return {W:Math.round((L1-L0)*k*S),H:Math.round((A1-A0)*S),
+    X:function(lon){return (lon-L0)*k*S;},Y:function(lat){return (A1-lat)*S;}};
+}
+function ptsStr(pr,a){return a.map(function(p){return pr.X(p[0]).toFixed(1)+','+pr.Y(p[1]).toFixed(1);}).join(' ');}
+function pathStr(pr,a){return a.map(function(p,i){return (i?'L':'M')+pr.X(p[0]).toFixed(1)+' '+pr.Y(p[1]).toFixed(1);}).join(' ');}
+
+/* ---------- Spain train map ---------- */
+var IB=[[-9.3,42.95],[-8.6,43.45],[-7.7,43.75],[-5.8,43.65],[-4.2,43.45],[-2.9,43.4],[-1.8,43.4],[-1.4,43.05],[0,42.8],[1.4,42.6],[3.2,42.4],[3.1,41.9],[2.2,41.4],[0.9,40.7],[0,39.8],[-0.3,39.4],[0.2,38.75],[-0.5,38.3],[-0.7,37.6],[-2.2,36.75],[-3.5,36.72],[-4.42,36.72],[-4.9,36.5],[-5.35,36.13],[-5.6,36.0],[-6.3,36.5],[-6.9,37.15],[-7.4,37.2],[-7.9,37.0],[-8.9,37.02],[-9.0,37.5],[-8.8,38.4],[-9.5,38.75],[-9.2,39.6],[-8.8,40.6],[-8.7,41.2],[-8.9,42.1]];
+var FR=[[-1.8,43.4],[-1.4,44.4],[4.0,44.4],[4.0,43.3],[3.1,43.1],[3.2,42.4],[1.4,42.6],[0,42.8],[-1.4,43.05]];
+var PT=[[-8.85,42.05],[-8.2,42.1],[-6.9,41.95],[-6.2,41.55],[-6.9,41.0],[-6.8,40.0],[-7.5,39.6],[-7.0,38.9],[-7.3,38.0],[-7.4,37.2]];
+var ROUTE=[[-3.69,40.4],[-3.85,39.5],[-4.05,38.8],[-4.55,38.2],[-4.78,37.89],[-4.75,37.4],[-4.56,37.02],[-4.43,36.71]];
+(function buildSpain(){
+  var pr=proj(-9.8,4.0,35.7,44.3,40,48);
+  var rs=pathStr(pr,ROUTE), rn=pathStr(pr,ROUTE.slice().reverse());
+  function city(lon,lat,name,dx,dy,anchor,cls){
+    return '<circle class="cdot" cx="'+pr.X(lon).toFixed(1)+'" cy="'+pr.Y(lat).toFixed(1)+'" r="'+(cls?3:5.5)+'"'+(cls?' style="fill:var(--ink2);stroke:none"':'')+'/>'+
+      '<text class="lbl'+(cls?' faint':'')+'" x="'+(pr.X(lon)+dx).toFixed(1)+'" y="'+(pr.Y(lat)+dy).toFixed(1)+'" text-anchor="'+anchor+'">'+name+'</text>';
+  }
+  var h='<svg viewBox="0 0 '+pr.W+' '+pr.H+'" role="img" aria-label="Map of Spain showing the train route from Madrid to Málaga">'+
+   '<polygon class="land2" points="'+ptsStr(pr,FR)+'"/>'+
+   '<polygon class="land" points="'+ptsStr(pr,IB)+'"/>'+
+   '<polyline class="border" points="'+ptsStr(pr,PT)+'"/>'+
+   '<text class="lbl faint" x="'+pr.X(-8.3)+'" y="'+pr.Y(39.4)+'" text-anchor="middle" style="stroke:none">Portugal</text>'+
+   '<text class="lbl faint" x="'+pr.X(1.6)+'" y="'+pr.Y(44.0)+'" text-anchor="middle" style="stroke:none">France</text>'+
+   '<text class="lbl sea" x="'+pr.X(-9.7)+'" y="'+pr.Y(36.0)+'">Atlantic Ocean</text>'+
+   '<text class="lbl sea" x="'+pr.X(0.5)+'" y="'+pr.Y(37.6)+'">Mediterranean Sea</text>'+
+   '<text x="'+pr.X(-3.2)+'" y="'+pr.Y(41.9)+'" text-anchor="middle" style="font:400 30px \'Lilita One\',system-ui,sans-serif;fill:var(--ink);opacity:.14">SPAIN</text>'+
+   city(2.17,41.39,'Barcelona',-8,-8,'end',1)+city(-0.38,39.47,'Valencia',-8,4,'end',1)+city(-5.98,37.39,'Sevilla',-8,4,'end',1)+city(-9.14,38.72,'Lisbon',10,4,'start',1)+
+   '<path id="routeS" class="track" d="'+rs+'"/><path class="ties" d="'+rs+'"/>'+
+   '<path id="routeN" d="'+rn+'" fill="none" stroke="none"/>'+
+   city(-3.7,40.42,'Madrid',12,4,'start')+
+   city(-4.78,37.89,'Córdoba',-11,4,'end')+
+   city(-4.42,36.72,'Málaga',11,-2,'start')+
+   city(-4.88,36.51,'Marbella',-11,14,'end')+
+   '<g id="trS" style="opacity:0"><use href="#trainShape" transform="scale(1.15)"/><animateMotion id="amS" dur="5s" begin="indefinite" fill="freeze" rotate="auto" calcMode="spline" keyTimes="0;1" keySplines=".3 0 .7 1"><mpath href="#routeS"/></animateMotion></g>'+
+   '<g id="trN" style="opacity:0"><use href="#trainShape" transform="scale(1.15)"/><animateMotion id="amN" dur="5s" begin="indefinite" fill="freeze" rotate="auto" calcMode="spline" keyTimes="0;1" keySplines=".3 0 .7 1"><mpath href="#routeN"/></animateMotion></g>'+
+   '</svg>';
+  $('#spainMap').innerHTML=h;
+})();
+var TRAIN={
+ S:{h:'Sun, Sep 27: Madrid to Málaga',steps:[
+   ['🚉','Madrid Puerta de Atocha','Aim for a mid-morning AVE, around 10:00 AM, after breakfast in Madrid.'],
+   ['🚄','About 2½ hours on the rails','The route runs south through Córdoba and the hills of Andalusia at up to 300 km/h.'],
+   ['🚕','Málaga María Zambrano station','Arrive around 12:30 PM, then about an hour by car or taxi along the sea to Marbella.'],
+   ['🏨','Hotel check-in','Settle in at the Óbal Hotel before the golf week begins.']]},
+ N:{h:'Fri, Oct 2: Málaga to Madrid',steps:[
+   ['🌄','Early start, around 7:00 AM','Leave Marbella for Málaga station. An early train leaves lots of cushion for the flight.'],
+   ['🚄','AVE to Madrid, around 8:30 AM','About 2½ hours north, with a stop or two on the way.'],
+   ['🚉','Madrid Puerta de Atocha, around 11:00 AM','Then a quick ride to the airport by commuter train, metro or taxi.'],
+   ['✈️','Flight to Munich at 2:55 PM','Plenty of time for lunch in the airport before boarding.']]}
+};
+var dirNow='S';
+function showTrain(dir,play){
+  dirNow=dir;
+  $('#btnS').setAttribute('aria-pressed',dir==='S');
+  $('#btnN').setAttribute('aria-pressed',dir==='N');
+  var t=TRAIN[dir];
+  $('#trainInfo').innerHTML='<h3>'+t.h+'</h3><ol class="steps" style="margin-top:14px">'+
+    t.steps.map(function(s){return '<li><span class="dot" aria-hidden="true">'+s[0]+'</span><div><b>'+s[1]+'</b><p style="margin:2px 0 0">'+s[2]+'</p></div></li>';}).join('')+'</ol>'+
+    '<p class="small" style="margin-top:14px">Train times here are plans. The exact trains get booked on Renfe, which runs Spain\'s AVE service. Most AVEs have Estándar and Confort classes.</p>';
+  $('#trS').style.opacity=0;$('#trN').style.opacity=0;
+  if(play){var g=dir==='S'?$('#trS'):$('#trN');var a=dir==='S'?$('#amS'):$('#amN');playMotion(g,a);}
+}
+$('#btnS').addEventListener('click',function(){showTrain('S',true);});
+$('#btnN').addEventListener('click',function(){showTrain('N',true);});
+showTrain('S',false);
+onView($('#spainMap'),function(){showTrain(dirNow,true);},0.4);
+onView($('#speed'),function(){$$('.sfill').forEach(function(b){b.style.width=b.getAttribute('data-w')+'%';});},0.3);
+
+/* ---------- Costa del Sol map + courses ---------- */
+var COURSES=[
+ {name:'San Roque Club, Old Course',em:'🌳',col:'#7A5C2E',lon:-5.345,lat:36.255,dx:14,dy:18,an:'start',
+  where:'San Roque, next to Sotogrande',par:'72',len:'6,311 m (about 6,900 yd)',opened:'1990',des:'Dave Thomas, with bunkers redone by Seve Ballesteros',drive:'about 45 min from the hotel',
+  fact:'It winds through a cork oak forest on land that once belonged to the Domecq sherry family, and their old mansion is now the clubhouse. It has hosted the Spanish Open. Cork oak bark is what wine corks are made from!',q:'San+Roque+Club+Old+Course'},
+ {name:'Los Naranjos',em:'🍊',col:'#D9701C',lon:-4.985,lat:36.503,dx:-9,dy:-9,an:'end',
+  where:'Nueva Andalucía, in Marbella\'s "Golf Valley"',par:'72',len:'up to about 6,500 m (7,100 yd)',opened:'1977',des:'Robert Trent Jones Sr.',drive:'about 15 min from the hotel',
+  fact:'The name means "the orange trees," after an orange grove that was already growing here. A river runs through the course, and the view has a mountain called La Concha. It has hosted the Spanish Open.',q:'Los+Naranjos+Golf+Club+Marbella'},
+ {name:'Real Club de Golf Sotogrande',em:'👑',col:'#2547D0',lon:-5.275,lat:36.32,dx:-14,dy:4,an:'end',
+  where:'Sotogrande, near Gibraltar',par:'72',len:'6,224 m (about 6,800 yd)',opened:'1964',des:'Robert Trent Jones Sr.',drive:'about 45 min from the hotel',
+  fact:'It was the first course Robert Trent Jones designed in Europe, and just 150 meters from the sea. In 1994 the King of Spain added "Real" (royal) to its name. Jones called it one of his five favorites of more than 500 courses.',q:'Real+Club+de+Golf+Sotogrande'},
+ {name:'Santana Golf',em:'🥑',col:'#2E7D46',lon:-4.705,lat:36.545,dx:0,dy:-14,an:'middle',
+  where:'Mijas Costa, in the hills above La Cala',par:'72',len:'about 6,207 m (about 6,800 yd)',opened:'2004',des:'Cabell B. Robinson',drive:'about 35 min from the hotel',
+  fact:'It\'s built on an old avocado farm, so there are avocado trees along the fairways. The 8th hole stretches 595 meters (650 yards), one of the longest around, and an old cork oak stands on the 5th hole.',q:'Santana+Golf+Mijas'}
+];
+(function buildCosta(){
+  var pr=proj(-5.5,-4.3,36.1,36.8,36.5,500);
+  var coast=[[-4.3,36.75],[-4.42,36.72],[-4.5,36.62],[-4.63,36.54],[-4.69,36.5],[-4.88,36.5],[-4.99,36.48],[-5.15,36.42],[-5.25,36.36],[-5.28,36.27],[-5.35,36.16],[-5.36,36.12],[-5.45,36.12],[-5.5,36.15],[-5.5,36.8],[-4.3,36.8]];
+  function pin(x,y,em,label,dx,dy,an){
+    return '<text x="'+x.toFixed(1)+'" y="'+(y+7).toFixed(1)+'" text-anchor="middle" font-size="22">'+em+'</text>'+
+      '<text class="lbl" x="'+(x+dx).toFixed(1)+'" y="'+(y+dy).toFixed(1)+'" text-anchor="'+an+'">'+label+'</text>';
+  }
+  var h='<svg viewBox="0 0 '+pr.W+' '+pr.H+'" role="img" aria-label="Map of the Costa del Sol with the hotel and four golf courses">'+
+    '<polygon class="land" points="'+ptsStr(pr,coast)+'"/>'+
+    '<text class="lbl sea" x="'+pr.X(-4.75)+'" y="'+(pr.H-24)+'">Mediterranean Sea</text>';
+  h+=pin(pr.X(-4.883),pr.Y(36.51),'🏨','Hotel (Marbella)',0,-22,'middle');
+  h+=pin(pr.X(-4.432),pr.Y(36.711),'🚉','Málaga station',-6,22,'end');
+  h+='<circle class="cdot" style="fill:var(--ink2);stroke:none" cx="'+pr.X(-5.35)+'" cy="'+pr.Y(36.14)+'" r="3"/><text class="lbl faint" x="'+(pr.X(-5.35)+8)+'" y="'+(pr.Y(36.14)+4)+'">Gibraltar</text>';
+  COURSES.forEach(function(c){
+    var short=c.name.replace('Real Club de Golf ','').replace(' Club, Old Course',' Old').replace(' Golf','');
+    h+=pin(pr.X(c.lon),pr.Y(c.lat),'⛳',short,c.dx,c.dy,c.an);
+  });
+  h+='</svg>';
+  $('#costaMap').innerHTML=h;
+})();
+var cl=$('#courseList');
+COURSES.forEach(function(c){
+  var d=document.createElement('article');
+  d.className='card course';
+  d.innerHTML='<div class="band" style="background:'+c.col+'"><span aria-hidden="true">'+c.em+'</span><h3>'+c.name+'</h3></div>'+
+   '<div class="body"><p><span class="tag">Day: to be announced</span></p>'+
+   '<dl class="spec"><dt>Where</dt><dd>'+c.where+'</dd><dt>Par</dt><dd>'+c.par+'</dd><dt>Length</dt><dd>'+c.len+'</dd><dt>Opened</dt><dd>'+c.opened+'</dd><dt>Designer</dt><dd>'+c.des+'</dd><dt>Drive</dt><dd>'+c.drive+'</dd></dl>'+
+   '<p>'+c.fact+'</p>'+
+   '<a href="https://www.google.com/maps/search/?api=1&query='+c.q+'" target="_blank" rel="noopener">Open in Maps</a></div>';
+  cl.appendChild(d);
+});
+
+/* ---------- money ---------- */
+var RATE=1.149;
+function f2(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+var eur=$('#eur'), usd=$('#usd');
+function num(v){var n=parseFloat(String(v).replace(/[^0-9.]/g,''));return isNaN(n)?0:n;}
+eur.addEventListener('input',function(){usd.value=eur.value===''?'':f2(num(eur.value)*RATE);});
+usd.addEventListener('input',function(){eur.value=usd.value===''?'':f2(num(usd.value)/RATE);});
+usd.value=f2(num(eur.value)*RATE);
+var tb=$('#rateTbl tbody');
+[1,2,5,10,20,50,100,200].forEach(function(e){
+  var tr=document.createElement('tr');
+  tr.innerHTML='<td>€'+e+'</td><td>$'+f2(e*RATE)+'</td>';
+  tb.appendChild(tr);
+});
+
+/* ---------- weather ---------- */
+var WX=[
+ {city:'Denver, takeoff day',when:'Fri, Sep 25',em:'☀️',hi:24,lo:8,tip:'Typically sunny and warm in the afternoon, cool at night.'},
+ {city:'Madrid',when:'Sat, Sep 26',em:'🌤️',hi:25,lo:13,tip:'Warm for exploring, but bring a light jacket for the late-night churros.'},
+ {city:'Marbella',when:'Sun, Sep 27 to Fri, Oct 2',em:'☀️',hi:26,lo:18,tip:'Golf weather! The sea is around 21°C (70°F), so a quick dip is possible.'},
+ {city:'Munich',when:'Oct 2 to 4',em:'🌥️',hi:16,lo:7,tip:'Jacket weather, with a decent chance of a shower.'},
+ {city:'Denver, homecoming',when:'Sun, Oct 4',em:'🍂',hi:22,lo:6,tip:'Crisp fall air is waiting at home.'}
+];
+var unit='F';
+function cv(c){return unit==='F'?Math.round(c*9/5+32):c;}
+function renderWx(){
+  $('#uF').setAttribute('aria-pressed',unit==='F');
+  $('#uC').setAttribute('aria-pressed',unit==='C');
+  var box=$('#wxList');box.innerHTML='';
+  WX.forEach(function(w){
+    var lo=Math.max(0,w.lo)/35*100, hi=Math.min(35,w.hi)/35*100;
+    var d=document.createElement('article');d.className='card';
+    d.innerHTML='<span class="em" aria-hidden="true">'+w.em+'</span>'+
+      '<h3 style="margin-top:6px">'+w.city+'</h3><div class="small">'+w.when+'</div>'+
+      '<div class="temps">'+cv(w.hi)+'° <small>high</small> &nbsp;'+cv(w.lo)+'° <small>low</small></div>'+
+      '<div class="range" aria-hidden="true"><i style="left:'+lo+'%;width:'+(hi-lo)+'%"></i></div>'+
+      '<p style="margin:0">'+w.tip+'</p>';
+    box.appendChild(d);
+  });
+}
+$('#uF').addEventListener('click',function(){unit='F';renderWx();});
+$('#uC').addEventListener('click',function(){unit='C';renderWx();});
+renderWx();
+
+/* ---------- fun ---------- */
+var WORDS={
+ es:[['Hola','OH-lah','Hello'],['Gracias','GRAH-thee-ahs','Thank you'],['Por favor','por fah-VOR','Please'],['¡Vamos!','BAH-mos','Let\'s go!'],['Un helado, por favor','oon eh-LAH-doh, por fah-VOR','An ice cream, please'],['Churros con chocolate','CHOO-rros kon cho-ko-LAH-teh','Fried dough sticks dipped in hot chocolate'],['¡Hoyo en uno!','OY-yo en OO-no','Hole in one!'],['La playa','lah PLY-ah','The beach'],['¡Qué rico!','keh REE-ko','How yummy!'],['Buenas noches','BWEH-nahs NO-chess','Good night']],
+ de:[['Danke','DAHN-kuh','Thank you'],['Bitte','BIT-tuh','Please, and also you\'re welcome'],['Brezel','BRET-sel','Pretzel'],['Tschüss','choos','Bye!'],['Guten Morgen','GOO-ten MOR-gen','Good morning'],['Eis','ice','Ice cream (it sounds just like "ice")']]
+};
+var lang='es', wi=0;
+function renderWord(){
+  var w=WORDS[lang][wi%WORDS[lang].length];
+  $('#wWord').textContent=w[0];$('#wSay').textContent='Say it: '+w[1];$('#wMean').textContent=w[2];
+  $('#langEs').setAttribute('aria-pressed',lang==='es');$('#langDe').setAttribute('aria-pressed',lang==='de');
+}
+$('#wNext').addEventListener('click',function(){wi++;renderWord();});
+$('#langEs').addEventListener('click',function(){lang='es';wi=0;renderWord();});
+$('#langDe').addEventListener('click',function(){lang='de';wi=0;renderWord();});
+renderWord();
+
+var FACTS=[
+ 'When you eat breakfast at 8 AM in Colorado, it is already 4 PM in Spain. That is snack time!',
+ 'In Spain, dinner often starts at 9 or 10 PM. Many Spanish kids stay up way later than you do.',
+ 'In Spain, the letters c and z often sound like "th," so "gracias" sounds like "grah-thee-ahs."',
+ 'Watch the hillsides for giant black bull silhouettes. They started as an ad for a sherry company, and now they are a Spanish icon.',
+ 'Madrid\'s Atocha train station has a tropical garden inside, with a turtle pond.',
+ 'Oktoberfest in Munich is the world\'s biggest fair. In 2026 it runs from Sept 19 to Oct 4, so the family is there for the final weekend.',
+ 'Marbella\'s Orange Square (Plaza de los Naranjos) is named for its orange trees, which grow in the middle of the old town.'
+];
+var fi=0;
+function renderFact(){$('#factText').textContent=FACTS[fi%FACTS.length];}
+$('#factNext').addEventListener('click',function(){fi++;renderFact();});
+renderFact();
+
+var BINGO=[['🐂','A giant black bull sign'],['🌴','A palm tree'],['🍊','An orange tree'],['🍦','Ice cream'],['🥨','A pretzel'],['⛳','A golf buggy'],['🚄','A high-speed train'],['🌅','Sunset over the sea'],['🍫','Churros']];
+var LINES=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+var marks=[];
+try{marks=JSON.parse(safeGet('spainBingo')||'[]');}catch(e){marks=[];}
+if(!Array.isArray(marks)) marks=[];
+var bg=$('#bingo');
+function bingoCheck(){
+  var got=LINES.some(function(l){return l.every(function(i){return marks.indexOf(i)>-1;});});
+  $('#bingoMsg').textContent=got?'BINGO! 🎉':'';
+}
+BINGO.forEach(function(b,i){
+  var el=document.createElement('button');
+  el.type='button';
+  el.setAttribute('aria-pressed',marks.indexOf(i)>-1);
+  el.innerHTML='<span aria-hidden="true">'+b[0]+'</span>'+b[1];
+  el.addEventListener('click',function(){
+    var k=marks.indexOf(i);
+    if(k>-1) marks.splice(k,1); else marks.push(i);
+    el.setAttribute('aria-pressed',marks.indexOf(i)>-1);
+    safeSet('spainBingo',JSON.stringify(marks));
+    bingoCheck();
+  });
+  bg.appendChild(el);
+});
+$('#bingoReset').addEventListener('click',function(){
+  marks=[];safeSet('spainBingo','[]');
+  $$('button',bg).forEach(function(b){b.setAttribute('aria-pressed','false');});
+  bingoCheck();
+});
+bingoCheck();
+})();
+</script>
+</body>
+</html>
